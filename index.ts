@@ -48,7 +48,7 @@ export class Metrics {
         }
     }
 
-    public getCount() {
+    public getSum() {
         this.maintain();
         return {
             1: this._get(1).sum,

@@ -1,15 +1,15 @@
 # NodeJS metrics collector like linux 1,5 and 15 minute metrics
 
-Linux has a smart little metric that shows averages every 1, 5, and 15 minutes. It is usually used to measure CPU load, but is good for any other value, such as disk usage or temperature. The 1 minute value is a good indication of how busy the system is right now. The 5 and 15 minute values show the values of their medium and long-term average loads.
+A linux-ban van egy okos kis metrika, amely 1, 5 és 15 percenkénti átlagokat mutat. Általában a CPU terhelését szokták mérni vele, de bármilyen más értékre is jó, például diszk használat vagy hőmérséklet. Az 1 perces érték jól mutatja mennyire terhelt a rendszer éppen most. Az 5 és 15 perces értékek pedig közép- és hosszútávú, átlagos terhelései értékeket mutatnak.
 
-If you want to use this useful linux capability in NodeJS as well, add the metrics-1-5-15 package to your project!
+Ha szeretnéd NodeJS-ben is használni ezt a hasznos linux képességet, akkor add hozzá a projektedhez a metrics-1-5-15 package-et!
 
-Add to project:
+Hozzáadás a projekthez:
 ```
 npm i metrics-1-5-15
 ```
 
-Use for numeric values:
+Használat számértékek esetén:
 
 ```
 import Metrics from 'metrics-1-5-15';
@@ -24,7 +24,7 @@ metricCpuLoad.getAvg(2)    // Display averages with 2 decimals
 metricCpuLoad.getAvg(2)[5] // Display 5 minutes average with 2 decimals
 ```
 
-In addition to averaging, you can also use it to count something with it:
+Átlagolás mellett használhatod arra is, hogy megszámolj vele valamit:
 
 ```
 import Metrics from 'metrics-1-5-15';

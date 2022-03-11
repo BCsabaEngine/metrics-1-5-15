@@ -16,12 +16,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Engine-MQ/engine-mq-client"
+    "url": "https://github.com/BCsabaEngine/metrics-1-5-15"
   },
   "bugs": {
-    "url": "https://github.com/Engine-MQ/engine-mq-client/issues"
+    "url": "https://github.com/BCsabaEngine/metrics-1-5-15/issues"
   },
-  "homepage": "https://github.com/Engine-MQ/engine-mq-client",
+  "homepage": "https://github.com/BCsabaEngine/metrics-1-5-15",
   "scripts": {
     "dev": "nodemon examples/example.ts",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",

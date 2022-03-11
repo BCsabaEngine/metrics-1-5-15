@@ -16,6 +16,6 @@ setInterval(() => {
     console.log('Cpu load (5m): ' + metricCpuLoad.getAvg(2)[5]);
     console.log();
 
-    console.log('Events count: ' + JSON.stringify(countEvents.getCount()));
+    console.log('Events count: ' + JSON.stringify(countEvents.getSum()));
     console.log();
 }, 1000);
