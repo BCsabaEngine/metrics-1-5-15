@@ -1,4 +1,4 @@
-# NodeJS metrics collector like linux 1,5 and 15 minute metrics
+# NodeJS metrics collector like linux 1, 5 and 15 minute metrics
 
 Linux has a smart little metric that shows averages every 1, 5, and 15 minutes. It is usually used to measure CPU load, but is good for any other value, such as disk usage or temperature. The 1 minute value is a good indication of how busy the system is right now. The 5 and 15 minute values show the values of their medium and long-term average loads.
 

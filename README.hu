@@ -1,4 +1,4 @@
-# NodeJS metrics collector like linux 1,5 and 15 minute metrics
+# NodeJS metrics collector like linux 1, 5 and 15 minute metrics
 
 A linux-ban van egy okos kis metrika, amely 1, 5 és 15 percenkénti átlagokat mutat. Általában a CPU terhelését szokták mérni vele, de bármilyen más értékre is jó, például diszk használat vagy hőmérséklet. Az 1 perces érték jól mutatja mennyire terhelt a rendszer éppen most. Az 5 és 15 perces értékek pedig közép- és hosszútávú, átlagos terhelései értékeket mutatnak.
 
