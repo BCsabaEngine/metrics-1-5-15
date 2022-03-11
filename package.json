@@ -1,0 +1,47 @@
+{
+  "name": "metrics-1-5-15",
+  "description": "Linux like metrics for 1, 5 and 15 minutes",
+  "author": "BCsabaEngine <csaba@balazs-magyar.hu>",
+  "license": "MIT",
+  "version": "1.0.0",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "engines": {
+    "node": ">=16",
+    "npm": "~8"
+  },
+  "files": [
+    "**/*.js",
+    "**/*.d.ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Engine-MQ/engine-mq-client"
+  },
+  "bugs": {
+    "url": "https://github.com/Engine-MQ/engine-mq-client/issues"
+  },
+  "homepage": "https://github.com/Engine-MQ/engine-mq-client",
+  "scripts": {
+    "dev": "nodemon examples/example.ts",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "clean": "tsc --build --clean",
+    "build": "tsc --build --clean && tsc --build --force",
+    "npm-publish": "npm run build && npm version patch && npm publish && npm run clean"
+  },
+  "keywords": [
+    "metric",
+    "minutes",
+    "1-5-15"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "17.0.21",
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/parser": "^5.13.0",
+    "eslint": "^8.10.0",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.6.0",
+    "typescript": "^4.6.2"
+  }
+}
