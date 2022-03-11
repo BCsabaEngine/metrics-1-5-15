@@ -37,3 +37,5 @@ networkBytes.add(load);
 networkBytes.getSum()    // Display summary
 networkBytes.getSum()[5] // 5 minute summary
 ```
+
+See the ```examples``` folder for more examples.
