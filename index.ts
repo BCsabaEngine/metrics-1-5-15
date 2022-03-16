@@ -3,10 +3,10 @@ const nowMs = () => new Date().getTime();
 const MAX_MINUTES = 15 + 1;
 const MAX_SECONDS = MAX_MINUTES * 60;
 
-export class Metrics {
+class Metrics {
     private values = new Map<number, { count: number, sum: number }>();
 
-    public add(inc: number) {
+    protected add(inc: number) {
         this.maintain();
 
         const time = ~~(nowMs() / 1000);
@@ -15,10 +15,6 @@ export class Metrics {
         value.count++;
         value.sum += inc;
         this.values.set(time, value);
-    }
-
-    public tick() {
-        this.add(1);
     }
 
     private _get(minutes: number) {
@@ -38,7 +34,7 @@ export class Metrics {
         return { sum: sum, avg: count ? sum / count : 0 };
     }
 
-    public getAvg(digits = 8) {
+    protected getAvg(digits = 8) {
         const roundTo = (number: number) => Math.round(number * Math.pow(10, digits)) / Math.pow(10, digits);
         this.maintain();
         return {
@@ -48,7 +44,7 @@ export class Metrics {
         }
     }
 
-    public getSum() {
+    protected getSum() {
         this.maintain();
         return {
             1: this._get(1).sum,
@@ -72,4 +68,36 @@ export class Metrics {
     }
 }
 
-export default Metrics;
+export class AverageMetrics extends Metrics {
+    public setCurrentValue(value: number) {
+        super.add(value);
+    }
+
+    public getAvgByMinutes(digits = 8) {
+        return super.getAvg(digits);
+    }
+}
+
+export class CounterMetrics extends Metrics {
+    public incCounter() {
+        super.add(1);
+    }
+
+    public incCounterBy(inc: number) {
+        super.add(inc);
+    }
+
+    public getCountByMinutes() {
+        return super.getSum();
+    }
+
+    public getCountBySeconds(digits = 8) {
+        const mincount = this.getCountByMinutes();
+        const roundTo = (number: number) => Math.round(number * Math.pow(10, digits)) / Math.pow(10, digits);
+        return {
+            1: roundTo(mincount[1] / 60),
+            5: roundTo(mincount[5] / 60),
+            15: roundTo(mincount[15] / 60),
+        }
+    }
+}
